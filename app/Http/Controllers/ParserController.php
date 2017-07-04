@@ -21,12 +21,12 @@ class ParserController extends Controller
   /**
   * Shows request page
   * @param string $url Параметр содержащий адрес домена для парсинга
-  * @return json
+  * @return array
   */
 
   public function parse(Request $request)
   {
     $parse = new Inquiry($request->input('url', 'http://www.bills.ru/'));
-    return $parse->getInfo();
+    return view('Parser.parseresult', ['parse' => $parse->getInfo()]);
   }  
 }
