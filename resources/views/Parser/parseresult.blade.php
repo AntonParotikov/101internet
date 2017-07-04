@@ -5,8 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Parsing</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <!-- Styles -->
         <style type="text/css">
 table {
@@ -38,6 +40,19 @@ table td:last-child {
 table tr:hover td {
   text-decoration: underline;
 }
+.wrap h2{
+    text-align: center;
+    cursor:pointer;
+}
+#idelement1 button{
+margin: 20px;
+display: block;
+padding: 5px 15px;
+}
+body{
+    padding: 20px;
+}
+
         </style>
     </head>
     <body>
@@ -57,5 +72,28 @@ table tr:hover td {
                 @endforeach
             </tbody>
         </table>
+        <div class="wrap">
+            <h2 data-toggle="collapse" и data-target="#idelement1">Задание Jquery</h2>
+            <div id="idelement1" class="collapse in">
+                <button class="">1</button>
+                <button class="">2</button>
+                <button class="">3</button>
+            </div>
+            <h3>Решение:</h3>
+            <p>
+            $( "button" ).click(function() {<br>
+                var el = document.querySelector("button");<br>
+                el.remove();<br>
+                $('#idelement1').append(el);<br>
+            });<br>
+            </p>
+        </div>
+        <script type="text/javascript">
+            $( "button" ).click(function() {
+                var el = document.querySelector("button");
+                el.remove();
+                $('#idelement1').append(el);
+            });
+        </script>
     </body>
 </html>
